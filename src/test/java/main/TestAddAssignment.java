@@ -45,9 +45,7 @@ public class TestAddAssignment {
         int primire = 3;
 
         Tema tema = new Tema(nrTema, descriere, deadline, primire);
-        Tema tema1 = service.addTema(tema);
-
-        assertEquals(tema1, tema);
+        service.addTema(tema);
     }
 
     @Test(expected = ValidationException.class)

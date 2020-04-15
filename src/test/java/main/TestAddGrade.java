@@ -41,16 +41,29 @@ public class TestAddGrade {
         service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
     }
 
-//    @Test
-//    public void addGradeSuccess() {
-//        Nota n = new Nota("123", "1", "1", 2.4, LocalDate.now());
-//        service.addNota(n, "");
-//    }
+    @Test
+    public void addGradeSuccess() {
+        Nota n = new Nota("123", "1", "1", 2.4, LocalDate.of(2018, 10, 15));
+        service.addNota(n, "");
+    }
 
-//    @Test(expected = ValidationException.class)
-//    public void addGradeStudentNullFail() {
-//
-//    }
+    @Test(expected = ValidationException.class)
+    public void addGradeStudentNullFail() {
+        Nota n = new Nota("123", null, "1", 2.4, LocalDate.of(2018, 10, 15));
+        service.addNota(n, "");
+    }
+
+    @Test(expected = ValidationException.class)
+    public void addGradeTemaNullFail() {
+        Nota n = new Nota("123", "1", null, 2.4, LocalDate.of(2018, 10, 15));
+        service.addNota(n, "");
+    }
+
+    @Test(expected = ValidationException.class)
+    public void addGradeInvalidFail() {
+        Nota n = new Nota("123", "1", "1", 11, LocalDate.of(2018, 10, 15));
+        service.addNota(n, "");
+    }
 
     @After
     public void drop() {
