@@ -40,3 +40,15 @@ Nota: 2.4
 Predata in saptamana: 2
 Deadline: 2
 Feedback: 
+
+Tema: 1
+Nota: 2.4
+Predata in saptamana: 2
+Deadline: 2
+Feedback: 
+
+Tema: 1
+Nota: 2.4
+Predata in saptamana: 2
+Deadline: 2
+Feedback: 
